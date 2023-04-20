@@ -1,0 +1,11 @@
+.bg-sky {
+    background-color: rgb(121, 203, 236);
+}
+
+.fg-green {
+    color: rgb(28, 147, 28);
+}
+
+.font-lobster {
+    font-family: Lobster, Arial, Helvetica;
+}
