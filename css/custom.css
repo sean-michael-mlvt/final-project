@@ -1,11 +1,61 @@
-.bg-sky {
-    background-color: rgb(121, 203, 236);
+
+/*COLOR PALETTE VARS*/
+:root {
+    --tan-p1: #efcda6;
+    --brown-p1: #BC6C25;
+    --sage-p1: #606C38;
+    --forest-p1: #283618;
+    --white-p1: #FEFAE0;
 }
 
-.fg-green {
-    color: rgb(28, 147, 28);
+/*NAVRBAR CUSTOMIZATION*/
+.text-logo {
+    font-size: 1.5rem;
+    color: var(--white-p1);
+}
+
+.nav-link {
+    font-family: Lobster, Arial, Helvetica;
+    font-size: 1.25rem;
+    color: var(--white-p1);
+}
+
+.nav-link:hover {
+    color: var(--white-p1);
 }
 
 .font-lobster {
     font-family: Lobster, Arial, Helvetica;
 }
+
+#navbar-banner {
+    background-color: var(--brown-p1);
+}
+
+.navbar-brand:hover, .navbar-brand:focus, .nav-link:focus {
+    box-shadow: var(--white-p1);
+    color: var(--white-p1);
+}
+
+/*Animation from my Project One*/
+.navbar-brand:hover, .nav-link:hover {
+    animation-name: glow;
+    animation-fill-mode: forwards;
+    animation-duration: 200ms;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 0px whitesmoke;
+    }
+    100% {
+        text-shadow: 0px 0px 8px whitesmoke;
+    }
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: var(--tan-p1);
+}
+/*----------------------------------------------*/
+
+/*MAIN BODY CUSTOMIZATION*/
