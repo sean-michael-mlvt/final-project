@@ -2,8 +2,8 @@
 /*COLOR PALETTE VARS*/
 :root {
     --tan-p1: #efcda6;
-    --brown-p1: #BC6C25;
-    --sage-p1: #606C38;
+    --brown-p1: #83450f;
+    --sage-p1: #7b8752;
     --forest-p1: #283618;
     --white-p1: #FEFAE0;
 }
@@ -59,3 +59,16 @@
 /*----------------------------------------------*/
 
 /*MAIN BODY CUSTOMIZATION*/
+
+body {
+    background-color: var(--sage-p1)!important;
+}
+
+#game-section {
+    margin-top: 2%;
+}
+
+.img-fluid {
+    border: solid 2px var(--forest-p1);
+}
+
