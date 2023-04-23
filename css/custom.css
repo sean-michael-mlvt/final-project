@@ -56,6 +56,10 @@
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
     color: var(--tan-p1);
 }
+
+.navbar-toggler {
+    color: var(--white-p1);
+}
 /*----------------------------------------------*/
 
 /*MAIN BODY CUSTOMIZATION*/
@@ -65,10 +69,9 @@ body {
 }
 
 #game-section {
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
-.img-fluid {
+#campus {
     border: solid 2px var(--forest-p1);
 }
-
