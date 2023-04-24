@@ -30,6 +30,7 @@
 
 #navbar-banner {
     background-color: var(--brown-p1);
+    border-bottom: solid 2px#FEFAE0;
 }
 
 .navbar-brand:hover, .navbar-brand:focus, .nav-link:focus {
@@ -59,7 +60,13 @@
 
 .navbar-toggler {
     color: var(--white-p1);
+    border-color: var(--white-p1);
 }
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='whitesmoke' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 /*----------------------------------------------*/
 
 /*MAIN BODY CUSTOMIZATION*/
@@ -69,9 +76,11 @@ body {
 }
 
 #game-section {
-    margin-top: 1%;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 #campus {
     border: solid 2px var(--forest-p1);
 }
+
