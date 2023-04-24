@@ -77,7 +77,10 @@ body {
 
 #game-section {
     padding-top: 12px;
-    padding-bottom: 12px;
+}
+
+#game-col, #map-col {
+    margin-bottom: 12px;
 }
 
 #campus {
@@ -103,6 +106,14 @@ body {
     padding-bottom: 10px;
 }
 
+#confirm-txt {
+    margin-bottom: 0px;
+}
+
+#confirm-btn {
+    margin-bottom: .5rem;
+}
+
 #confirm-btn:hover {
     animation-name: glow-box;
     animation-fill-mode: forwards;
@@ -117,3 +128,4 @@ body {
         box-shadow: 0px 0px 8px whitesmoke;
     }
 }
+
