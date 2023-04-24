@@ -110,11 +110,11 @@ body {
     margin-bottom: 0px;
 }
 
-#confirm-btn {
+#confirmBtn {
     margin-bottom: .5rem;
 }
 
-#confirm-btn:hover {
+#confirmBtn:hover {
     animation-name: glow-box;
     animation-fill-mode: forwards;
     animation-duration: 200ms;
