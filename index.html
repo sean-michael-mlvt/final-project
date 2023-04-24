@@ -39,16 +39,40 @@
     <!--MAIN BODY-->
     <main>
        <div id="middle-section" class="container-fluid">
-        <!--Game Section-->
+        <!--Game-->
         <div id="game-section" class="row justify-content-around">
-          <!--Map Side-->
+          <!--Map Column-->
           <div id="map-col" class="col-md-6">
             <img id="campus" class="img-fluid" src="assets/img/uga-campus-cropped-1.jpg" alt="Map of UGA's Campus">
           </div>
-          <!--Question Side-->
-          <div class="col-sm-6">
-
-            
+          <!--Question Column-->
+          <div id="game-col" class="col-md-6">
+            <div class="container-fluid">
+              <!--Prompt & Score-->
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="floating-text">Where was this taken?</h3>
+                </div>
+                <div class="col-4">
+                  <h3 id="score" class="floating-text">Score: 0</h3>
+                </div>
+              </div>
+              <!--Current Image-->
+              <div id="current-img-container" class="row justify-content-center">
+                <img id="current-img" class="img-fluid" src="assets/img/mlc-back.jpg" alt="Image of the a building with columns and a terraced semicircle section behind it">
+              </div>
+              <!--Info & Guess Button-->
+              <div class="row justify-content-between">
+                <div class="col-6">
+                  <h3 class="floating-text">Drop Your Pin!</h3>
+                </div>
+                <div class="col-6">
+                
+                  <h3 id="confirm-btn" class="floating-text">Confirm Guess</h3>
+                  
+                </div>
+              </div>
+            </div>
             
           </div>
         </div>
