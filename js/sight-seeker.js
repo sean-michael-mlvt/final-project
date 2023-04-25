@@ -1,5 +1,5 @@
 let score = 0;
-let toggle = true;
+let index = 0;
 let xPos = 0;
 let yPos = 0;
 let guess = "";
@@ -41,8 +41,14 @@ mappin.addEventListener('click', function(e) {
 confirm.addEventListener("click", function(e) {
     console.log("Confirm Button Clicked");
     console.log("Guess: " + guess);
-    correctX = map.width * xWeights[0];
-    correctY = map.height * yWeights[0];
+    correctX = map.width * xWeights[index];
+    correctY = map.height * yWeights[index];
     console.log("Correct (" + correctX + ", " + correctY + ")" );
+    let differenceX = Math.abs(xPos - correctX);
+    let differenceY = Math.abs(xPos - correctX);
+    let c2 = (differenceX * differenceX) + (differenceY * differenceY);
+    let distance = Math.sqrt(c2);
+    console.log("You were " + distance + " away");
+    //Map the possible distances to a score!
 });
 
