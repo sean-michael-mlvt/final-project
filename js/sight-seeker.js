@@ -12,6 +12,7 @@ let pin = document.getElementById("pin");
 const mappin = document.getElementById("mappin");
 const infoText = document.getElementById("txtInfo");
 const currentImg = document.getElementById("current-img");
+let textScore = document.getElementById("score");
 
 //Correct Answer Information
 const paths = [
@@ -29,13 +30,17 @@ console.log(map.height);
 //Drops the Pin when the map div is clicked.
 mappin.addEventListener('click', function(e) {
     
+    //Get Mouse Relative Location
     const target = e.target;
     const rect = target.getBoundingClientRect();
     xPos = e.clientX - rect.left;
     yPos = e.clientY - rect.top;
+    //Move Pin (Point)
     pin.style.top = (yPos - 42) + "px";
     pin.style.left = (xPos - 14) + "px";
-    infoText.innerText = `(${xPos}, ${yPos})`;
+    //Display Coordinates
+    infoText.innerText = "(" + Math.round(xPos) + ", " + Math.round(yPos) + ")";
+    //Log Details
     guess = "(" + xPos + ", " + yPos + ")";
     console.log("Pin placed at: " + guess);
 });
@@ -49,14 +54,21 @@ confirm.addEventListener("click", function(e) {
     correctX = map.width * xWeights[index];
     correctY = map.height * yWeights[index];
     console.log("Correct (" + correctX + ", " + correctY + ")" );
-    //Calculate Distance From Answer
+
+    //Calculate Distance From Guess to Answer
     let differenceX = Math.abs(xPos - correctX);
     let differenceY = Math.abs(yPos - correctY);
     let c2 = (differenceX * differenceX) + (differenceY * differenceY);
     let distance = Math.sqrt(c2);
     console.log("You were " + distance + " away");
-    //Update Score
-    //Edit
+
+    //Adjust and Update Score
+    let adjustment = 0;
+    let max = Math.sqrt(map.width * map.width + map.height * map.height)
+    adjustment = 100 * (1 - (distance/max));
+    score += adjustment;
+    textScore.innerText = "Score: " + Math.round(score);
+
     //Update Index and Image
     index++;
     currentImg.src = paths[index];
