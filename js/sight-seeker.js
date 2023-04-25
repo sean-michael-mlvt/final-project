@@ -1,14 +1,17 @@
+//Variables
 let score = 0;
 let index = 0;
 let xPos = 0;
 let yPos = 0;
 let guess = "";
 
+//Elements
 const confirm = document.getElementById("confirmBtn");
 const map = document.getElementById("campus");
 let pin = document.getElementById("pin");
 const mappin = document.getElementById("mappin");
 const infoText = document.getElementById("txtInfo");
+const currentImg = document.getElementById("current-img");
 
 //Correct Answer Information
 const paths = [
@@ -37,18 +40,25 @@ mappin.addEventListener('click', function(e) {
     console.log("Pin placed at: " + guess);
 });
 
-//Submits the Guess
+//Submits the Guess when Confirm is Clicked
 confirm.addEventListener("click", function(e) {
+    //Log Guess
     console.log("Confirm Button Clicked");
     console.log("Guess: " + guess);
+    //Calculate Correct Answer
     correctX = map.width * xWeights[index];
     correctY = map.height * yWeights[index];
     console.log("Correct (" + correctX + ", " + correctY + ")" );
+    //Calculate Distance From Answer
     let differenceX = Math.abs(xPos - correctX);
-    let differenceY = Math.abs(xPos - correctX);
+    let differenceY = Math.abs(yPos - correctY);
     let c2 = (differenceX * differenceX) + (differenceY * differenceY);
     let distance = Math.sqrt(c2);
     console.log("You were " + distance + " away");
-    //Map the possible distances to a score!
+    //Update Score
+    //Edit
+    //Update Index and Image
+    index++;
+    currentImg.src = paths[index];
 });
 
