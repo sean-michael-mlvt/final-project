@@ -152,3 +152,10 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+/*Mobile Adjustments*/
+@media (max-width: 576px) {
+    .floating-text, #confirm-txt {
+        font-size: calc(1rem + 0.75vw);
+    }
+}
