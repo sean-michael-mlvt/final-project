@@ -159,3 +159,11 @@ body {
         font-size: calc(1rem + 0.75vw);
     }
 }
+
+/*Adding Correct Answer Flag*/
+#flag {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+}
