@@ -11,6 +11,7 @@ let state = "GUESSING"; //State of Game: GUESSING or CHECKING
 
 //Elements
 const confirm = document.getElementById("confirmBtn");
+let confirmText = document.getElementById("confirm-txt");
 const map = document.getElementById("campus");
 let pin = document.getElementById("pin");
 const mappin = document.getElementById("mappin");
@@ -51,9 +52,9 @@ mappin.addEventListener('click', function(e) {
     
 
     //Display Coordinates
-    infoText.innerText = "(" + Math.round(xPos) + ", " + Math.round(yPos) + ")";
+    guess = "(" + Math.round(xPos) + ", " + Math.round(yPos) + ")";
     //Log Details
-    guess = "(" + xPos + ", " + yPos + ")";
+    infoText.innerText = guess;
     console.log("Pin placed at: " + guess);
 });
 
@@ -62,9 +63,11 @@ mappin.addEventListener('click', function(e) {
 confirm.addEventListener("click", function(e) {
     //Condition: Next or Confirm State?
     if (state === "GUESSING") {
-        submitGuess();
-        showAnswer();
+        points = submitGuess();
+        showAnswer(points);
+        switchToChecking();
     } else if (state === "CHECKING") {
+        switchToGuessing();
     }
 });
 
@@ -133,18 +136,34 @@ function submitGuess() {
 
     //Update Index and Image
     index++;
+
+    return adjustment;
+} //submitGuess
+
+//Shows where the correct answer was
+function showAnswer(points) {
+    flag.style.top = (correctY - 46) + "px";
+    flag.style.left = (correctX - 8) + "px";
+    flag.style.display = '';
+    infoText.innerText = "+" + Math.round(points) + "!";
+} //showAnswer
+
+function switchToChecking() {
+    confirmText.innerText = "Next";
+    state = "CHECKING";
+    
+}
+
+function switchToGuessing() {
+    flag.style.display = "none";
     currentImg.src = paths[index];
+    infoText.innerText = guess;
+    confirmText.innerText = "Confirm Guess";
+    state = "GUESSING";
 
     //If locations exhausted -> Disable Button
     if (index === paths.length - 1) {
         confirm.disabled = true;
         console.log("Confirm Disabled");
     }
-} //submitGuess
-
-//Shows where the correct answer was
-function showAnswer() {
-    flag.style.top = (correctY - 46) + "px";
-    flag.style.left = (correctX - 8) + "px";
-    flag.style.display = '';
-} //showAnswer
+}
