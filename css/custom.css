@@ -167,3 +167,21 @@ body {
     height: 50px;
     pointer-events: none;
 }
+
+/*ABOUT PAGE CSS*/
+#terry-banner {
+    filter: brightness(0.6);
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white-p1);
+}
+
+.banner-holder {
+    position: relative;
+    border-bottom: solid 2px var(--white-p1);
+}
