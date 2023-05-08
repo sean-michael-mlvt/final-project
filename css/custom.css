@@ -173,6 +173,11 @@ body {
     filter: brightness(0.6);
 }
 
+#methods-banner {
+    filter: brightness(0.7);
+    filter: blur(1px);
+}
+
 .banner-text {
     position: absolute;
     top: 50%;
@@ -184,4 +189,9 @@ body {
 .banner-holder {
     position: relative;
     border-bottom: solid 2px var(--white-p1);
+    border-top: solid 2px var(--white-p1);
+}
+
+a {
+    color:var(--white-p1);
 }
