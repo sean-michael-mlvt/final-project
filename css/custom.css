@@ -178,6 +178,10 @@ body {
     filter: blur(1px);
 }
 
+#future-banner {
+    filter: brightness(0.5);
+}
+
 .banner-text {
     position: absolute;
     top: 50%;
